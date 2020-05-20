@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang=”en” xmlns:th=”www.thymeleaf.org”>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <h3>Welcome, please fill in the following boxes</h3>
+    <form th:action="@{/}" th:object="${form}" method="post">
+        <span>Name: <input th:field="*{name}" type="text" placeholder="Enter name..."></span> <br>
+        <span>Quest: <input th:field="*{quest}" type="text" placeholder="What is your quest?"></span> <br>
+        <span>Question: <input th:field="*{question}" type="text" placeholder="What's your favorite color?"></span> <br>
+        <input type="submit" value="Submit">
+    </form>
+    <br><br><br>
+    <h5>Interesting..</h5>
+    <p>So, your name is [[${form.name}]], and your quest is [[${form.quest}]]. Now it makes sense that your
+        favorite color is [[${form.question}]]</p>
+</body>
+</html>
